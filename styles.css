@@ -1,0 +1,1236 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /* Color mode HSL(hue, saturation, lightness) */
+  --first-color: hsl(268, 77%, 58%);
+  --first-color-dark: hsl(268, 78%, 51%);
+  --first-color-light: hsl(268, 100%, 83%);
+  --title-color: hsl(0, 0%, 87%);
+  --text-color: hsl(0, 0%, 69%);
+  --body-color: hsl(200, 12%, 5%);
+  --container-color: hsl(200, 10%, 8%);
+  --border-color: hsl(0, 0%, 20%);
+  --white: #fff;
+
+  /*========== Font and typography ==========*/
+  /* .5rem = 8px | 1rem = 16px ... */
+  --body-font: 'Jost', sans-serif;
+  --big-font-size: 3rem;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 2.25rem;
+  --h3-font-size: 1.5rem;
+  --larger-font-size: 1.2rem;
+  --large-font-size: 1.125rem;
+
+  /*========== Font weight ==========*/
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-600: 600;
+}
+
+/*=============== DARK THEME ===============*/
+#day-night:checked ~ * {
+  --title-color: hsl(247, 27%, 31%);
+  --text-color: hsl(0, 0%, 41%);
+  --body-color: hsl(0, 0%, 100%);
+  --container-color: hsl(266, 78%, 98%);
+  --border-color: hsl(0, 0%, 87%);
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* Apply font and styles to input, textarea, button, and body */
+input,
+textarea,
+button,
+body {
+  font-family: var(--body-font);
+  font-size: var(--larger-font-size);
+}
+/* Apply styles to main element */
+main {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+/* Remove default styles from input, textarea, and button */
+input,
+textarea,
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+/* Styles for headings */
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--weight-600);
+}
+/* Remove default list styles */
+ul {
+  list-style: none;
+}
+/* Remove default underline from links */
+a {
+  text-decoration: none;
+}
+/* Ensure images don't exceed their container */
+img {
+  max-width: 100%;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+/* Grid layout */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+/* Section padding */
+.section {
+  padding-block: 8rem;
+}
+/* Section title styles */
+.section__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--weight-400);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+/* Add custom title before each section title */
+.section__title::before {
+  content: attr(data-title);
+  display: block;
+  color: var(--first-color);
+  font-size: var(--large-font-size);
+  font-weight: var(--weight-600);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+/* Center align section titles */
+.title-center {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/*=============== STYLE SWITCHER ===============*/
+/* Hide radio and checkbox inputs */
+input[type='radio'],
+input[type='checkbox'] {
+  display: none;
+}
+/* Style switcher container */
+.style__switcher {
+  position: fixed;
+  right: 0;
+  bottom: 20%;
+  padding: 1rem;
+  width: 220px;
+  border: 1px solid var(--border-color);
+  background-color: var(--container-color);
+  border-radius: 0.5rem;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+}
+/* Show switcher when toggled */
+#toggler:checked ~ .style__switcher {
+  transform: translateX(0);
+}
+/* Style switcher toggler and theme buttons */
+.style__switcher-toggler,
+.style__switcher-theme {
+  position: absolute;
+  right: 110%;
+  color: var(--title-color);
+  background-color: var(--body-color);
+  border: 1px solid var(--border-color);
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease;
+}
+/* Positioning for switcher toggler */
+.style__switcher-toggler {
+  top: 7%;
+}
+/* Positioning for theme button */
+.style__switcher-theme {
+  bottom: 7%;
+}
+/* Hide moon icon in light theme */
+.style__switcher-theme .fa-moon {
+  display: none;
+}
+/* Hide sun icon in dark theme */
+#day-night:checked ~ * .fa-sun {
+  display: none;
+}
+/* Show moon icon in dark theme */
+#day-night:checked ~ * .fa-moon {
+  display: block;
+}
+/* Style for switcher title */
+.style__switcher-title {
+  font-size: var(--large-font-size);
+  margin-bottom: 0.75rem;
+}
+/* Color palette for switcher */
+.style__switcher-colors {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.style__switcher-colors .color {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.color-1 {
+  background-color: hsl(252, 35%, 51%);
+}
+
+.color-2 {
+  background-color: hsl(351, 85%, 51%);
+}
+
+.color-3 {
+  background-color: hsl(271, 76%, 53%);
+}
+
+.color-4 {
+  background-color: hsl(225, 73%, 57%);
+}
+
+.color-5 {
+  background-color: hsl(43, 74%, 49%);
+}
+
+.color-6 {
+  background-color: hsl(339, 81%, 66%);
+}
+
+.color-7 {
+  background-color: hsl(80, 61%, 50%);
+}
+
+.color-8 {
+  background-color: hsl(19, 96%, 52%);
+}
+
+.color-9 {
+  background-color: hsl(88, 65%, 43%);
+}
+
+.color-10 {
+  background-color: hsl(42, 100%, 50%);
+}
+
+#color-1:checked ~ * {
+  --first-color: hsl(252, 35%, 51%);
+  --first-color-dark: hsl(252, 25%, 51%);
+  --first-color-light: hsl(252, 100%, 83%);
+}
+
+#color-2:checked ~ * {
+  --first-color: hsl(351, 85%, 51%);
+  --first-color-dark: hsl(351, 75%, 51%);
+  --first-color-light: hsl(351, 100%, 83%);
+}
+
+#color-3:checked ~ * {
+  --first-color: hsl(271, 76%, 53%);
+  --first-color-dark: hsl(271, 60%, 53%);
+  --first-color-light: hsl(271, 100%, 83%);
+}
+
+#color-4:checked ~ * {
+  --first-color: hsl(225, 73%, 57%);
+  --first-color-dark: hsl(225, 63%, 57%);
+  --first-color-light: hsl(225, 100%, 83%);
+}
+
+#color-5:checked ~ * {
+  --first-color: hsl(43, 74%, 49%);
+  --first-color-dark: hsl(43, 64%, 49%);
+  --first-color-light: hsl(43, 100%, 83%);
+}
+
+#color-6:checked ~ * {
+  --first-color: hsl(339, 81%, 66%);
+  --first-color-dark: hsl(339, 71%, 66%);
+  --first-color-light: hsl(339, 100%, 83%);
+}
+
+#color-7:checked ~ * {
+  --first-color: hsl(80, 61%, 50%);
+  --first-color-dark: hsl(80, 51%, 50%);
+  --first-color-light: hsl(80, 100%, 83%);
+}
+
+#color-8:checked ~ * {
+  --first-color: hsl(19, 96%, 52%);
+  --first-color-dark: hsl(19, 86%, 52%);
+  --first-color-light: hsl(19, 100%, 83%);
+}
+
+#color-9:checked ~ * {
+  --first-color: hsl(88, 65%, 43%);
+  --first-color-dark: hsl(88, 55%, 43%);
+  --first-color-light: hsl(88, 100%, 83%);
+}
+
+#color-10:checked ~ * {
+  --first-color: hsl(42, 100%, 50%);
+  --first-color-dark: hsl(42, 85%, 50%);
+  --first-color-light: hsl(42, 100%, 83%);
+}
+
+/*=============== HEADER & NAV ===============*/
+/* Styles for the header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  box-shadow: 0 3px 9px hsla(0, 0%, 0%, 0.05);
+  z-index: 100;
+}
+/* Styles for the navigation */
+.nav,
+.nav__list {
+  display: flex;
+}
+/* Styles for the main navigation container */
+.nav {
+  height: calc(var(--header-height) + 2.25rem);
+  justify-content: space-between;
+  align-items: center;
+}
+/* Styles for the navigation logo */
+.nav__logo {
+  color: var(--first-color);
+  font-size: var(--h2-font-size);
+}
+/* Styles for the navigation list */
+.nav__list {
+  column-gap: 1.5rem;
+}
+/* Styles for the navigation links */
+.nav__link {
+  color: var(--title-color);
+  transition: all 0.3s ease;
+}
+/* Styles for the navigation toggle button */
+.nav__toggle {
+  display: none;
+}
+
+/* Active link */
+/* Styles for active links and hover effect */
+.active-link,
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+/*=============== HOME ===============*/
+.home {
+  background-color: var(--container-color);
+  padding-block: 10rem 4rem;
+}
+/* Styles for the container within the home section */
+.home__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+/* Styles for small text within the home section */
+.home__small {
+  font-size: var(--large-font-size);
+  font-weight: var(--weight-600);
+  letter-spacing: 1px;
+}
+/* Styles for the title within the home section */
+.home__title {
+  font-size: var(--big-font-size);
+  line-height: 1.4;
+}
+/* Styles for spans within the title of the home section */
+.home__title span {
+  font-weight: var(--weight-300);
+}
+/* Styles for the description within the home section */
+.home__description {
+  margin-block: 1.5rem 3rem;
+}
+/* Styles for the buttons within the home section */
+.home__btns {
+  display: flex;
+  column-gap: 1rem;
+}
+/* Styles for the image wrapper within the home section */
+.home__img-wrapper {
+  margin-inline: auto 2rem;
+  position: relative;
+}
+
+.home__img-wrapper::before,
+.home__img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+/* Styles for the pseudo-elements before and after the image wrapper */
+.home__img-wrapper::before {
+  background-color: var(--first-color-light);
+  animation: animate__before 8s ease-in-out infinite;
+}
+
+.home__img-wrapper::after {
+  background-color: var(--first-color);
+}
+/* Styles for the pseudo-element after and the image within the image wrapper */
+.home__img-wrapper::after,
+.home__img {
+  animation: animate__after 8s ease-in-out infinite;
+}
+/* Styles for the image within the image wrapper */
+.home__img {
+  z-index: 10;
+  position: relative;
+  vertical-align: middle;
+}
+
+/* Home animation */
+/* Animation keyframes for the home section */
+@keyframes animate__before {
+  0% {
+    border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
+  }
+
+  50% {
+    border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
+  }
+
+  100% {
+    border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
+  }
+}
+
+@keyframes animate__after {
+  0% {
+    border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
+  }
+
+  50% {
+    border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
+  }
+
+  100% {
+    border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
+  }
+}
+
+/*=============== BUTTON ===============*/
+.btn {
+  display: inline-block;
+  background-color: var(--first-color);
+  border: 1px solid var(--first-color);
+  color: var(--white);
+  padding: 0.9rem 2.5rem;
+  font-size: var(--large-font-size);
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+}
+/* Styles for the transparent button */
+.btn--transparent {
+  background-color: transparent;
+  color: var(--first-color);
+}
+
+/* Button hover */
+.btn:hover {
+  background-color: var(--first-color-dark);
+}
+
+.btn--transparent:hover {
+  background-color: var(--first-color);
+  color: var(--white);
+}
+
+/*=============== ABOUT ===============*/
+.about__container {
+  grid-template-columns: 4fr 8fr;
+  align-items: center;
+}
+
+.about__img-wrapper {
+  position: relative;
+  height: 400px;
+}
+
+.about__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.about__img:nth-child(1) {
+  clip-path: polygon(0 0, 0 32%, 28% 0);
+  transform: translateY(-1.25rem);
+}
+
+.about__img:nth-child(2) {
+  clip-path: polygon(28% 0, 0 32%, 0 100%, 17% 100%, 90% 0);
+  transform: translateY(-0.75rem);
+}
+
+.about__img:nth-child(3) {
+  clip-path: polygon(100% 0, 100% 65%, 74% 100%, 17% 100%, 90% 0);
+  transform: translateY(-0.25rem);
+}
+
+.about__img:nth-child(4) {
+  clip-path: polygon(100% 65%, 74% 100%, 100% 100%);
+  transform: translateY(0.25rem);
+}
+
+/* About img hover */
+.about__img-wrapper:hover .about__img {
+  transform: translateY(0);
+}
+/* Styles for the description section of about */
+.about__description {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+/* Styles for the data section of about */
+.about__data {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem;
+  margin-bottom: 3rem;
+}
+/* Styles for each data item in about section */
+.data__item {
+  display: flex;
+  column-gap: 0.75rem;
+}
+/* Styles for the title of data in about section */
+.data__title {
+  font-size: var(--larger-font-size);
+}
+/* Styles for links in about section */
+.about__link {
+  color: hsl(225, 73%, 57%);
+}
+/* Styles for the bottom section of about */
+.about__bottom,
+.about__social-links {
+  display: flex;
+  align-items: center;
+}
+/* Styles for the bottom section of about */
+.about__bottom {
+  column-gap: 3rem;
+}
+/* Styles for social links in about section */
+.about__social-links {
+  column-gap: 1.25rem;
+}
+/* Styles for the separator before social links */
+.about__social-links::before {
+  content: '';
+  background-color: var(--text-color);
+  width: 60px;
+  height: 2px;
+}
+/* Styles for each social link in about section */
+.about__social-link {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+/* Hover effect for social links in about section */
+.about__social-link:hover {
+  color: var(--first-color);
+}
+
+/*=============== QUALIFICATION ===============*/
+.qualification {
+  background-color: var(--container-color);
+}
+/* Styles for the container of resume items */
+.resume__container {
+  grid-template-columns: repeat(2, 1fr);
+}
+/* Styles for the heading of resume section */
+.resume__heading {
+  text-align: center;
+  font-size: var(--h3-font-size);
+  padding-bottom: 2rem;
+}
+/* Styles for the heading and items of resume */
+.resume__heading,
+.resume__item {
+  border-bottom: 2px solid var(--border-color);
+}
+/* Styles for resume items, except the first one */
+.resume__item:not(:first-child) {
+  border-right: 2px solid var(--border-color);
+}
+/* Styles for each item in the resume section */
+.resume__item {
+  position: relative;
+}
+/* Styles for the header of resume item */
+.resume__header {
+  padding: 2rem 1.5rem;
+}
+/* Styles for the subtitle of resume item */
+.resume__subtitle {
+  font-size: var(--larger-font-size);
+  cursor: pointer;
+}
+/* Styles for the icon in resume item */
+.resume__icon {
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  font-size: var(--h2-font-size);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  line-height: 1.1em;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: -1.5rem;
+  bottom: -1.5rem;
+  z-index: 10;
+}
+/* Styles for the content of resume item */
+.resume__content {
+  padding-inline: 1.5rem 3rem;
+}
+/* Styles for the date title in resume item */
+.resume__date-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Styles for the title in resume item */
+.resume__title {
+  font-size: var(--h3-font-size);
+}
+/* Styles for the date in resume item */
+.resume__date {
+  color: var(--title-color);
+  font-size: var(--large-font-size);
+}
+/* Styles for the description in resume item */
+.resume__description {
+  margin-block: 1.25rem 2rem;
+}
+
+/*=============== Subject ===============*/
+.subject__container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.subject__item {
+  background-color: var(--container-color);
+  border: 1px solid var(--container-color);
+  padding: 2.5rem 1.8rem;
+  border-radius: 0.5rem;
+  position: relative;
+  transition: all 0.5s ease;
+}
+/* Styles for the hover effect on subject item */
+/* Subject hover */
+.subject__item:hover {
+  background-color: var(--body-color);
+  border-color: var(--border-color);
+}
+/* Styles for the icon in subject item */
+.subject__icon {
+  color: var(--first-color);
+  font-size: 1.8rem;
+}
+/* Styles for the title of subject item */
+.subject__title {
+  font-size: var(--h3-font-size);
+  margin-block: 1.5rem 1rem;
+}
+/* Styles for the number in subject item */
+.subject__no {
+  position: absolute;
+  right: 2.5rem;
+  top: 1rem;
+  color: var(--title-color);
+  font-size: 3.75rem;
+  opacity: 0.07;
+}
+
+/*=============== SKILLS ===============*/
+.skills {
+  background-color: var(--container-color);
+}
+/* Styles for the container of skills */
+.skills__container {
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 4rem;
+}
+/* Styles for the titles in the skills section */
+.skills__titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Styles for titles and description in the skills section */
+.skills__titles,
+.skills__description {
+  padding-inline: 1.5rem;
+}
+/* Styles for the name of the skill */
+.skills__name {
+  font-size: var(--larger-font-size);
+}
+/* Styles for the number in the skills section */
+.skills__no {
+  color: var(--title-color);
+  font-size: var(--large-font-size);
+  font-weight: var(--weight-600);
+}
+/* Styles for the description in the skills section */
+.skills__description {
+  margin-block: 1rem 1.8rem;
+}
+/* Styles for the bar representing skill level */
+.skills__bar,
+.skills__percentage {
+  height: 2px;
+}
+/* Styles for the background of the skill bar */
+.skills__bar {
+  background-color: var(--border-color);
+}
+/* Styles for the percentage of skill level */
+.skills__percentage {
+  background-color: var(--first-color);
+  position: relative;
+}
+/* Styles for the circle representing skill level percentage */
+.skills__percentage span {
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: -0.75rem;
+}
+
+/*=============== PORTFOLIO ===============*/
+.work__container {
+  grid-template-columns: repeat(3, 1fr);
+}
+/* Styles for the portfolio card */
+.work__card {
+  position: relative;
+  cursor: pointer;
+}
+/* Styles for the portfolio image */
+.work__img {
+  vertical-align: middle;
+}
+/* Styles for the details overlay of portfolio items */
+.work__details {
+  position: absolute;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+/* Common styles for portfolio image and details */
+.work__img,
+.work__details {
+  border-radius: 0.5rem;
+}
+/* Styles for the title of portfolio items */
+.work__title {
+  font-size: var(--h3-font-size);
+}
+/* Styles for the title and description of portfolio items */
+.work__title,
+.work__description {
+  color: var(--white);
+  transform: translateY(1.5rem);
+  transition: all 0.3s ease-in-out;
+}
+/* Styles for the description of portfolio items */
+.work__description {
+  font-size: var(--large-font-size);
+}
+
+/* Work hover effect */
+.work__card:hover .work__details {
+  opacity: 1;
+}
+/* Hover effect for title and description */
+.work__card:hover :is(.work__title, .work__description) {
+  transform: translateY(0);
+}
+/*=============== CERTIFICATE ===============*/
+.sololearn__container {
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+/* Styles for the SoloLearn certificate card */
+.sololearn__card {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+/* Styles for the SoloLearn certificate image */
+.sololearn__img {
+  vertical-align: middle;
+}
+/* Styles for the details overlay of SoloLearn certificates */
+.sololearn__details {
+  position: absolute;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+/* Common styles for SoloLearn certificate image and details */
+.sololearn__img,
+.sololearn__details {
+  border-radius: 0.5rem;
+}
+/* Styles for the title of SoloLearn certificates */
+.sololearn__title {
+  font-size: var(--h3-font-size);
+}
+/* Styles for the title and description of SoloLearn certificates */
+.sololearn__title,
+.sololearn__description {
+  color: var(--white);
+  transform: translateY(1.5rem);
+  transition: all 0.3s ease-in-out;
+}
+/* Styles for the description of SoloLearn certificates */
+.sololearn__description {
+  font-size: var(--large-font-size);
+}
+
+/* sololearn hover */
+.sololearn__card:hover .sololearn__details {
+  opacity: 1;
+}
+/* Hover effect for title and description */
+.sololearn__card:hover :is(.sololearn__title, .sololearn__description) {
+  transform: translateY(0);
+}
+
+/*=============== TESTIMONIALS ===============*/
+.testimonials {
+  background-color: var(--container-color);
+}
+/* Styles for the container of testimonials */
+.testimonials__container {
+  grid-template-columns: repeat(2, 1fr);
+}
+/* Styles for the description of testimonials */
+.testimonials__description {
+  margin-bottom: 1.75rem;
+}
+/* Icon before the description */
+.testimonials__description::before {
+  content: '\f10d';
+  font-family: fontawesome;
+  display: block;
+  color: var(--first-color);
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.25rem;
+}
+/* Styles for the data (image, name, identity) of testimonials */
+.testimonials__data {
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+}
+/* Styles for the image of testimonials */
+.testimonials__img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* Styles for the name of the person providing the testimonial */
+.testimonials__name {
+  font-size: var(--larger-font-size);
+}
+/* Styles for the identity of the person providing the testimonial */
+.testimonials__identity {
+  font-size: var(--large-font-size);
+}
+
+/*=============== CONTACT ===============*/
+.contact__container {
+  grid-template-columns: 5fr 7fr;
+  align-items: flex-start;
+}
+/* Styles for each item in the contact section */
+.contact__item {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 1.25rem;
+}
+/* Styles for items in the contact section except the last one */
+.contact__item:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+/* Styles for the icon used in the contact section */
+.contact__icon {
+  color: var(--first-color);
+  font-size: var(--large-font-size);
+  line-height: 1.8;
+}
+/* Styles for the title of each contact item */
+.contact__title {
+  font-size: var(--larger-font-size);
+}
+/* Styles for the data of each contact item */
+.contact__data {
+  font-size: var(--large-font-size);
+}
+/* Styles for the form group in the contact form */
+.form__group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.25rem;
+}
+/* Styles for the input control in the contact form */
+.input__control {
+  color: var(--title-color);
+  background-color: var(--container-color);
+  padding: 0.9rem 0.75rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+/* Styles for the textarea in the contact form */
+.textarea {
+  height: 140px;
+  resize: none;
+}
+/* Styles for the submit button in the contact form */
+.contact__btn {
+  float: right;
+}
+* Styles for the message in the contact form */
+.contact__message {
+  position: absolute;
+  bottom: 14%;
+  left: 0;
+  color: var(--first-color);
+}
+/* Styles for dark color */
+.color-dark {/* Styles for the submit button in the contact form */
+  opacity: 0.5;
+}
+/* Styles for light color */
+.color-light {
+  opacity: 1;
+}
+/* Styles for the contact form */
+.contact__form {
+  position: relative;
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--container-color);
+  padding-block: 3rem;
+}
+/* Styles for the container within the footer */
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Styles for the copyright text in the footer */
+.footer__copyright {
+  color: var(--text-color);
+}
+/* Styles for the social links container in the footer */
+.footer__social-links {
+  display: flex;
+  column-gap: 1.25rem;
+}
+/* Styles for each social link in the footer */
+.footer__social-link {
+  color: var(--text-color);
+  font-size: var(--large-font-size);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 1200px) {
+.container {
+  max-width: 960px;
+}
+/* Root variables for font sizes */
+:root {
+  --big-font-size: 2.5rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.75rem;
+  --h3-font-size: 1.25rem;
+  --larger-font-size: 1rem;
+  --large-font-size: 0.938rem;
+}
+
+.home__img {
+  width: 340px;
+}
+
+.about__img-wrapper {
+  height: 320px;
+}
+
+.resume__icon {
+  line-height: 1.4em;
+}
+
+.subject__icon {
+  font-size: 1.5rem;
+}
+
+.subject__no {
+  font-size: 2.5rem;
+}
+
+.subject__title {
+  margin-block: 1.25rem 0.75rem;
+}
+
+.style__switcher {
+  width: 200px;
+}
+
+.style__switcher-colors .color {
+  width: 24px;
+  height: 24px;
+}
+
+.style__switcher-toggler,
+.style__switcher-theme {
+  width: 40px;
+  height: 40px;
+}
+
+.style__switcher-toggler {
+  top: 10%;
+  }
+
+.style__switcher-theme {
+  bottom: 10%;
+}
+}
+
+@media screen and (max-width: 992px) {
+.container {
+  max-width: 720px;
+}
+/* Grid layout adjustments for various sections */
+.home__container,
+.about__container,
+.resume__container,
+.testimonials__container,
+.contact__container {
+  grid-template-columns: 1fr;
+}
+
+.home__content {
+  order: 1;
+}
+
+.home__img-wrapper {
+  margin-inline: auto;
+}
+
+.about__container,
+.contact__container {
+  row-gap: 2rem;
+}
+
+.about__img:not(:first-child) {
+  display: none;
+}
+
+.about__img:first-child {
+  clip-path: initial;
+  transform: initial;
+  left: 50%;
+  translate: -50%;
+}
+
+.subject__container,
+.skills__container,
+.work__container {
+  grid-template-columns: repeat(2, 1fr);
+}
+.skills__container,
+.work__container,
+.sololearn__container {
+  grid-template-columns: repeat(3, 1fr);
+  gap:1rem;
+}
+
+.testimonials__container,
+.resume__container {
+  row-gap: 2.5rem;
+}
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+.container {
+  max-width: 560px;
+}
+/* Adjustments for navigation */
+.nav {
+  height: calc(var(--header-height) + 1rem);
+}
+
+.nav__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.75rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.nav__toggle {
+  display: block;
+  color: var(--text-color);
+  font-size: 1.3rem;
+}
+
+#nav-toggler:checked ~ .nav__list {
+  max-height: 500px;
+  padding: 1.75rem;
+}
+
+.home__img {
+  width: 300px;
+}
+}
+
+/* For small devices */
+@media screen and (max-width: 576px) {
+.home {
+  padding-top: 7rem;
+}
+
+.section {
+  padding-block: 4rem;
+}
+
+.resume__icon {
+  display: none;
+}
+
+.subject__container,
+.skills__container,
+.work__container,
+.sololearn__container,
+.form__group {
+  grid-template-columns: 1fr;
+}
+
+.footer__container {
+  flex-direction: column;
+  row-gap: 1rem;
+}
+}
+/* Additional styles for very small devices */
+@media screen and (max-width: 450px) {
+.about__data {
+  grid-template-columns: 1fr;
+}
+
+.about__bottom,
+.resume__date-title {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about__bottom {
+  row-gap: 1.25rem;
+}
+
+.about__bottom .btn {
+  order: 1;
+}
+
+.resume__date-title {
+  row-gap: 0.25rem;
+}
+
+.resume__header,
+.skills__titles,
+.skills__description {
+  padding-inline: 1rem;
+}
+
+.resume__content {
+  padding-inline: 1rem 1.5rem;
+}
+
+.subject__item {
+  padding: 2rem 1.5rem;
+}
+}

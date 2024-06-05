@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FONT AWESOME ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Responsive portfolio website - Farhana</title>
+  </head>
+  <body>
+    <!--==================== STYLE SWITCHER ====================-->
+    <!-- Color options -->
+    <input type="radio" name="color" id="color-1" />
+    <input type="radio" name="color" id="color-2" />
+    <input type="radio" name="color" id="color-3" />
+    <input type="radio" name="color" id="color-4" />
+    <input type="radio" name="color" id="color-5" />
+    <input type="radio" name="color" id="color-6" />
+    <input type="radio" name="color" id="color-7" />
+    <input type="radio" name="color" id="color-8" />
+    <input type="radio" name="color" id="color-9" />
+    <input type="radio" name="color" id="color-10" />
+    <!-- Theme toggler -->
+    <input type="checkbox" id="toggler" />
+    <!-- Day/Night mode toggle -->
+    <input type="checkbox" id="day-night" />
+
+    <div class="style__switcher">
+      <label for="toggler" class="style__switcher-toggler">
+        <i class="fa-solid fa-gear fa-spin"></i>
+      </label>
+
+      <label for="day-night" class="style__switcher-theme">
+        <i class="fa-solid fa-sun"></i>
+        <i class="fa-solid fa-moon"></i>
+      </label>
+
+      <h3 class="style__switcher-title">Theme Colors</h3>
+      <!-- Color options -->
+
+      <div class="style__switcher-colors">
+        <label for="color-1" class="color-1 color"></label>
+        <label for="color-2" class="color-2 color"></label>
+        <label for="color-3" class="color-3 color"></label>
+        <label for="color-4" class="color-4 color"></label>
+        <label for="color-5" class="color-5 color"></label>
+        <label for="color-6" class="color-6 color"></label>
+        <label for="color-7" class="color-7 color"></label>
+        <label for="color-8" class="color-8 color"></label>
+        <label for="color-9" class="color-9 color"></label>
+        <label for="color-10" class="color-10 color"></label>
+      </div>
+    </div>
+
+    <!--==================== HEADER ====================-->
+    <header class="header">
+      <nav class="nav container">
+        <!-- Logo -->
+        <a href="index.html" class="nav__logo">Farhana</a>
+        <!-- Navigation toggler -->
+        <input type="checkbox" id="nav-toggler" />
+
+        <label for="nav-toggler" class="nav__toggle">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+        <!-- Navigation links -->
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#qualification" class="nav__link">Experience</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#subject" class="nav__link">Subject</a>
+          </li>
+          
+          <li class="nav__item">
+            <a href="#works" class="nav__link">Portfolio</a>
+          </li>
+          <li class="nav__item">
+            <a href="#sololearn" class="nav__link">Certificate</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home" id="home">
+        <div class="home__container container grid">
+          <div class="home__content">
+            <span class="home__small">Hello</span>
+            <h1 class="home__title">
+              <span>I'm</span> Farhana</span>
+            </h1>
+            <!-- Description -->
+            <p class="home__description">
+              Hey, welcome to my portfolio! I'm currently studying
+              Creative Computing at Bath Spa University, and I'm tackling tough
+              challenges. I like Web Development jobs, but my big Aim is to
+              become a software developer. Here, you'll find a collection of my
+              projects, skills, and experiences as I work to make that dream a
+              reality. I will continue to push the boundaries of the technology
+              world, feeling free to explore, learn and reach out to myself.
+            </p>
+
+            <div class="home__btns">
+              <a href="#contact" class="btn">Hire Me</a>
+              <a href="#works" class="btn btn--transparent">Portfolio</a>
+            </div>
+          </div>
+          <!-- Profile Image -->
+          <div class="home__img-wrapper">
+            <img src="profile.png" alt="" class="home__img" />
+          </div>
+        </div>
+      </section>
+
+      <!--==================== ABOUT ====================-->
+      <section class="about section" id="about">
+        <div class="about__container container grid">
+          <div class="about__img-wrapper">
+            <img src="about.png" alt="" class="about__img" />
+            <img src="about.png" alt="" class="about__img" />
+            <img src="about.png" alt="" class="about__img" />
+            <img src="about.png" alt="" class="about__img" />
+          </div>
+
+          <div class="about__content">
+           <!-- Section title --> 
+            <h2 class="section__title" data-title="Who am i?">
+              I'm Farhana, A Bsc Creative Computing Student and Web Developer
+            </h2>
+             <!-- Personal data -->
+            <p class="about__description">
+              I was born in Bangladesh. I have spent almost 18 years of my life
+              in Bangladesh. I passed HSC from Dhaka Shaheed Ramizuddin
+              Cantonment College. My parents both live in UAE so I moved here.I got
+              admission to Bsc creative computing in Bath Spa
+              University.My aim to become a software developer. As of now I am still in university where there
+              are many things to learn.
+            </p>
+
+            <ul class="about__data grid">
+              <li class="data__item">
+                <h3 class="data__title">Name:</h3>
+                <span class="data__description">Farhana</span>
+              </li>
+
+              <li class="data__item">
+                <h3 class="data__title">Age:</h3>
+                <span class="data__description">20 Years</span>
+              </li>
+
+              <li class="data__item">
+                <h3 class="data__title">From:</h3>
+                <span class="data__description">Bangladesh, BD</span>
+              </li>
+
+              <li class="data__item">
+                <h3 class="data__title">Email</h3>
+                <span class="data__description about__link"
+                  >farhana3051a@gmail.com</span
+                >
+              </li>
+            </ul>
+
+            <div class="about__bottom">
+              <a href="CV.html" class="btn">Open Cv</a>
+
+              <div class="about__social-links">
+                <a href="https://x.com/home" class="about__social-link">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a href="https://www.instagram.com/" class="about__social-link">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/" class="about__social-link">
+                  <i class="fa-brands fa-square-facebook"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/feed/" class="about__social-link">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== QUALIFICATION ====================-->
+      <section class="qualification section" id="qualification">
+        <h2 class="section__title title-center" data-title="My Journey">
+          Qualification
+        </h2>
+
+        <div class="resume__container container grid">
+          <div class="resume__group">
+            <h3 class="resume__heading">Education</h3>
+
+            <div class="resume__items">
+              <div class="resume__item">
+                <div class="resume__header">
+                  <h3 class="resume__subtitle">Bsc Creative Computing</h3>
+                  <span class="resume__icon">+</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">BACHELOR DEGREE</h3>
+                    <span class="resume__date">2023 - 2024</span>
+                  </div>
+
+                  <p class="resume__description">
+                    Currently completeing my Bachelors in Creative Computing
+                    Degree at Bath Spa University.
+                  </p>
+                </div>
+              </div>
+
+              <div class="resume__item">
+                <div class="resume__header">
+                  <h3 class="resume__subtitle">
+                    Shaheed Ramizuddin Cantonment College
+                  </h3>
+                  <span class="resume__icon">-</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">HSC in Science</h3>
+                    <span class="resume__date">2020-2022</span>
+                  </div>
+
+                  <p class="resume__description">
+                    Completed my College education from Shaheed Ramizuddin
+                    Cantonment College, Dhaka, BD.
+                  </p>
+                </div>
+              </div>
+
+              <div class="resume__item">
+                <div class="resume__header">
+                  <h3 class="resume__subtitle">HRKP High School</h3>
+                  <span class="resume__icon">+</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">SSC in Science</h3>
+                    <span class="resume__date">2017 - 2019</span>
+                  </div>
+                  Completed my High school education from Haydarabad Romoni
+                  Kumer Poit High School, Gazipur, BD.
+                  <p class="resume__description">
+                    Here I mention all my studies. I have done some more courses
+                    in Solo learn including, paython, html, css,js,java etc.I
+                    learned a lot from this solo learn course. Certificate links
+                    are
+                    <a href="https://drive.google.com/drive/folders/1ZUEZQQloqk4UcFsZpQXE1vtaCC7SK58d?usp=sharing">here</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume__group">
+            <h3 class="resume__heading">Experience</h3>
+
+            <div class="resume__items">
+              <div class="resume__item">
+                <div class="resume__header">
+                  <h3 class="resume__subtitle">Wedding Planer</h3>
+                  <span class="resume__icon">+</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">ROSE EVENT</h3>
+                    <span class="resume__date">2024 - PRESENT</span>
+                  </div>
+
+                  <p class="resume__description">
+                    I have been working at Rose Events for 1.5 years, I know how
+                    to decorate everything. Here is the link to my work
+                    <a href="https://drive.google.com/drive/folders/1jfJRxFX4vcyc_5EelNT3DXOQ-L0T1lHE?usp=sharing">photos</a>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="resume__item">
+                <div class="resume__header">
+                  <h3 class="resume__subtitle">Math Teacher</h3>
+                  <span class="resume__icon">-</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">Solim Sorker Model Academy</h3>
+                    <span class="resume__date">2021 - 2022</span>
+                  </div>
+
+                  <p class="resume__description">
+                    As a mathematics teacher in a school I have one year
+                    experience.I know algebraic concepts, trigonometric etc.
+                  </p>
+                </div>
+              </div>
+
+              <div class="resume__item">
+                <div class="resume__header">
+                  <h3 class="resume__subtitle">Web Developer</h3>
+                  <span class="resume__icon">+</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">Course in online</h3>
+                    <span class="resume__date">2024</span>
+                  </div>
+
+                  <p class="resume__description">
+                    I am doing web development course online. Although my course
+                    is not completed yet but I have learned a lot from here. I
+                    have learned to create different types of websites starting
+                    from the basics of html, css, js. now i know how to design a
+                    website and how to use js code to make the website more
+                    beautiful and attractive.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== Subject====================-->
+      <section class="subject section" id="subject">
+        <h2 class="section__title title-center" data-title="Subject">
+          What I do for you
+        </h2>
+
+        <div class="subject__container container grid">
+          <div class="subject__item">
+            <i class="fa-solid fa-pen-to-square subject__icon"></i>
+
+            <h3 class="subject__title">UI/UX Design</h3>
+            <p class="subject__description">
+              I'm currently studying UI/UX design, I'm making a mobile apps now, hopefully I'll make better mobile apps in the future
+            </p>
+
+            <span class="subject__no">01</span>
+          </div>
+
+          <div class="subject__item">
+            <i class="fa-solid fa-laptop subject__icon"></i>
+
+            <h3 class="subject__title">Web Development</h3>
+            <p class="subject__description">
+              I am now studying about Web Devolvement, I am creating a website now, hopefully I will make a better website in the future.
+            </p>
+
+            <span class="subject__no">02</span>
+          </div>
+
+          <div class="subject__item">
+            <i class="fa-solid fa-chart-area subject__icon"></i>
+
+            <h3 class="subject__title">Creative Codding</h3>
+            <p class="subject__description">I am now studying creative computing, although I have learned a lot in p5.js, I am currently making a game, hopefully I will make a better game in the future</p>
+
+            <span class="subject__no">03</span>
+          </div>
+
+          <div class="subject__item">
+            <i class="fa-solid fa-pen-to-square subject__icon"></i>
+
+            <h3 class="subject__title">Programming</h3>
+            <p class="subject__description">
+              I'm alredy completed this programming in 2023.I know everything
+              about this subject.
+            </p>
+
+            <span class="subject__no">04</span>
+          </div>
+
+          <div class="subject__item">
+            <i class="fa-solid fa-laptop subject__icon"></i>
+
+            <h3 class="subject__title">Digital story telling</h3>
+            <p class="subject__description">
+              I'm alredy completed this Digital story telling in 2023.I know
+              everything about this subject
+            </p>
+
+            <span class="subject__no">05</span>
+          </div>
+
+          <div class="subject__item">
+            <i class="fa-solid fa-chart-area subject__icon"></i>
+
+            <h3 class="subject__title">Digital Visual Design</h3>
+            <p class="subject__description">
+              I'm alredy completed this digital visual design in 2023. I know
+              everything about this subject.
+            </p>
+
+            <span class="subject__no">06</span>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== SKILLS ====================-->
+      <section class="skills section">
+        <h2 class="section__title title-center" data-title="My Talent">
+          Professional Skills
+        </h2>
+
+        <div class="skills__container container grid">
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">HTML</h3>
+              <span class="skills__no">85 %</span>
+            </div>
+
+            <p class="skills__description">
+              I learned a lot of HTML code.I'm also Completed solo learn course.
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 85%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">JavaScript</h3>
+              <span class="skills__no">75 %</span>
+            </div>
+
+            <p class="skills__description">
+              I learned a lot of JavaScript code.I'm also Completed solo learn course.
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 75%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">CSS</h3>
+              <span class="skills__no">80 %</span>
+            </div>
+
+            <p class="skills__description">
+              I learned a lot of CSS code.I'm also Completed solo learn course.
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 90%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">Python</h3>
+              <span class="skills__no">75 %</span>
+            </div>
+
+            <p class="skills__description">
+              I have learned a lot about python. I have made a vending machine
+              using python code. Here is the code
+              <a href="https://github.com/Bath-Spa/programming-skills-portfolio-Farhana-Eva">link</a>.
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 75%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">Visual Design</h3>
+              <span class="skills__no">75 %</span>
+            </div>
+
+            <p class="skills__description">
+              I am learning a lot of visual design.I know how to create many
+              designs in Figma,My all works link is
+              <a href="https://drive.google.com/drive/folders/1ojmgiviIo4-H6cRPwmPbZMzu6D5mi5QZ?usp=sharing">here</a>.
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 70%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">UX Design</h3>
+              <span class="skills__no">75 %</span>
+            </div>
+
+            <p class="skills__description">
+              I am learning a lot about UX Design. I know how to make mobile
+              apps using UX design in Figma.
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 80%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== PORTFOLIO ====================-->
+      <section class="works section" id="works">
+        <h2 class="section__title title-center" data-title="My Portfolio">
+          Recent Works
+        </h2>
+
+        <div class="work__container container grid">
+          <div class="work__card">
+            <img src="project-img-1.jpg" alt="" class="work__img" />
+
+            <div class="work__details">
+              <h3 class="work__title">Petrol Calculator</h3>
+              <a class="work__link"
+              href="https://github.com/Bathspa-University/web-dev-1-set-exercises-Farhana-Eva">Here is the link</a>
+            </div>
+          </div>
+
+          <div class="work__card">
+            <img src="project-img-2.jpg" alt="" class="work__img" />
+
+            <div class="work__details">
+              <h3 class="work__title">Alan Partridge Soundboard</h3>
+              <a class="work__link"
+              href="https://github.com/Bathspa-University/web-dev-1-set-exercises-Farhana-Eva">Here is the link</a>
+            </div>
+          </div>
+
+          <div class="work__card">
+            <img src="project-img-3.jpg" alt="" class="work__img" />
+
+            <div class="work__details">
+              <h3 class="work__title">RGB Color Game</h3>
+              <a class="work__link"
+              href="https://github.com/Bathspa-University/web-dev-1-set-exercises-Farhana-Eva">Here is the link</a>
+            </div>
+          </div>
+
+          <div class="work__card">
+            <img src="project-img-4.jpg" alt="" class="work__img" />
+
+            <div class="work__details">
+              <h3 class="work__title">Natural Images(Filter Effect)</h3>
+              <a class="work__link"
+              href="https://github.com/Bathspa-University/web-dev-1-set-exercises-Farhana-Eva">Here is the link</a>
+            </div>
+          </div>
+
+          <div class="work__card">
+            <img src="project-img-5.jpg" alt="" class="work__img" />
+
+            <div class="work__details">
+              <h3 class="work__title">Non-Linear Interactive Story</h3>
+              <a class="work__link"
+              href="https://sway.cloud.microsoft/UOyBhHfUGBCtejpx?ref=Link">Here is the link</a>
+            </div>
+          </div>
+
+          <div class="work__card">
+            <img src="project-img-6.jpg" alt="" class="work__img" />
+
+            <div class="work__details">
+              <h3 class="work__title">FIGMA Website</h3>
+              <a class="work__link"
+              href="https://sway.cloud.microsoft/BvDzhwc7ctibqaEj?ref=Link">Here is the link</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--==================== CERTIFICATE ====================-->
+      <section class="sololearn section" id="sololearn">
+        <h2
+          class="section__title title-center"
+          data-title="My sololearn Certificate"
+        >
+          Recent Course
+        </h2>
+        <div class="sololearn__container container grid">
+          <div class="sololearn__card">
+            <img src="html.jpeg" alt="" class="sololearn__img" />
+
+            <div class="sololearn__details">
+              <h3 class="sololearn__title">HTML</h3>
+              <a class="sololearn__link" href="html.jpeg">View Certificate</a>
+            </div>
+          </div>
+
+          <div class="sololearn__card">
+            <img src="css.jpeg" alt="" class="sololearn__img" />
+
+            <div class="sololearn__details">
+              <h3 class="sololearn__title">CSS</h3>
+              <a class="sololearn__link" href="css.jpeg">View Certificate</a>
+            </div>
+          </div>
+
+          <div class="sololearn__card">
+            <img src="js.jpeg" alt="" class="sololearn__img" />
+
+            <div class="sololearn__details">
+              <h3 class="sololearn__title">JavaScript</h3>
+              <a class="sololearn__link" href="js.jpeg">View Certificate</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== TESTIMONIALS ====================-->
+      <section class="testimonials section">
+        <h2 class="section__title title-center" data-title="Testimonials">
+          What My Clients Say
+        </h2>
+
+        <div class="testimonials__container container grid">
+          <div class="testimonials__item">
+            <p class="testimonials__description">
+              Hiring ROSE EVENT was the best decision we made during the wedding
+              planning process. They took all the stress out and made everything
+              so easy for us.Our guests are still raving about how smoothly
+              everything went.
+            </p>
+
+            <div class="testimonials__data">
+              <img src="testimonial-1.jpg" alt="" class="testimonials__img" />
+
+              <div>
+                <h3 class="testimonials__name">Marium</h3>
+                <span class="testimonials__identity">Dubai,Al Barsha </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonials__item">
+            <p class="testimonials__description">
+              What I appreciated most about working with ROSE EVENT was their
+              professionalism and calm demeanor. No matter what challenges
+              arose, they handled them with grace and ensured everything went
+              according to plan
+            </p>
+
+            <div class="testimonials__data">
+              <img src="testimonial-2.jpg" alt="" class="testimonials__img" />
+
+              <div>
+                <h3 class="testimonials__name">Haviba</h3>
+                <span class="testimonials__identity"
+                  >Sharjah, Al Rahmaniya</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact">
+        <h2 class="section__title title-center" data-title="Get in touch">
+          Contact Me
+        </h2>
+
+        <div class="contact__container container grid">
+          <div class="contact__details">
+            <div class="contact__item">
+              <i class="fa-solid fa-phone contact__icon"></i>
+
+              <div>
+                <h3 class="contact__title">Call Me</h3>
+                <span class="contact__data">+971 581296734</span>
+              </div>
+            </div>
+
+            <div class="contact__item">
+              <i class="fa-solid fa-envelope contact__icon"></i>
+
+              <div>
+                <h3 class="contact__title">Email Me</h3>
+                <span class="contact__data">farhana3051a@gmail.com</span>
+              </div>
+            </div>
+
+            <div class="contact__item">
+              <i class="fa-solid fa-location-dot contact__icon"></i>
+
+              <div>
+                <h3 class="contact__title">Address</h3>
+                <span class="contact__data">Address here, Ajman Romillia-1, UAE </span>
+              </div>
+            </div>
+          </div>
+
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <section action="" id="contact-form" class="contact__form">
+              <div class="form__group">
+                <input type="hidden" name="access_key" value="4216c942-8b8a-4190-a22d-abc1aee572fb">
+                <div class="form__input">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    class="input__control"
+                    id="contact-name"
+                    name="name"
+                  />
+                </div>
+          
+                <div class="form__input">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="input__control"
+                    id="contact-email"
+                    name="email"
+                  />
+                </div>
+              </div>
+          
+              <div class="form__input">
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Message"
+                  cols="30"
+                  rows="10"
+                  class="input__control textarea"
+                ></textarea>
+              </div>
+          
+              <p class="contact__message text-sm" id="contact-message"></p>
+          
+              <button type="submit" class="btn contact__btn">Send Message</button>
+            </section>
+          </form>
+          
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+      <div class="footer__container container">
+        <p class="footer__copyright">&copy; 2024 Farhana.</p>
+
+        <div class="footer__social-links">
+          <a href="https://x.com/home" class="footer__social-link">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+
+          <a href="https://www.instagram.com/" class="footer__social-link">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://www.facebook.com/" class="footer__social-link">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/feed/" class="footer__social-link">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!--=============== Email Js ===============-->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <!--=============== JS ===============-->
+    <script src="JS script.js"></script>
+  </body>
+</html>
